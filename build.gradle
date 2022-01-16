@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+}
+
+group 'at.helpch.placeholderapi.expansion'
+version '1.0.0'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+
+    maven {
+        name 'Spigot'
+        url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+
+    maven {
+        name 'PlaceholderAPI'
+        url 'https://repo.extendedclip.com/content/repositories/placeholderapi/'
+    }
+
+    maven {
+        name 'VaultAPI'
+        url 'https://jitpack.io'
+    }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
+    compileOnly 'me.clip:placeholderapi:2.11.1'
+    compileOnly 'org.jetbrains:annotations:22.0.0'
+    compileOnly 'com.github.MilkBowl:VaultAPI:1.7'
+}
+
+shadowJar {
+    archiveName("Expansion-Permission-${project.version}.jar")
+}
