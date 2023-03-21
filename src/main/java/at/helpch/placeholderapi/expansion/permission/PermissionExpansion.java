@@ -70,7 +70,7 @@ public final class PermissionExpansion extends PlaceholderExpansion {
     @Contract("null, _ -> null")
     @Override
     public @Nullable String onRequest(@Nullable final OfflinePlayer player, @NotNull final String params) {
-        if (player == null || !player.hasPlayedBefore()) {
+        if (player == null) {
             return null;
         }
 
